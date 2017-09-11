@@ -6,6 +6,8 @@ let iframeUpdate = () => {
     
     document.getElementById("output-box").contentWindow.eval($("#js-box").val()); 
 };    
+    
+$("#demo-div").hide();
 
 
 //Panel selection    
@@ -38,10 +40,10 @@ $("textarea").on("change keyup paste", () => {
     
 //https://codepen.io/artyom-ivanov/pen/WEqKmQ
 
-let demoHTML = `<canvas id="canvas"></canvas> 
-//put cursor here and press enter! >>>`;
+let demoHTML = `<canvas id="canvas"></canvas>`;
 let demoCSS = 'body{background: black;overflow: hidden;}';
-let demoJS = `particles = 180;
+let demoJS = `//put cursor here and press enter! >>>
+particles = 180;
 points = [];
 points1 = [];
 pointers = [];
@@ -130,6 +132,7 @@ $("#demo-button").on('click', () => {
   $("#html-box").val(demoHTML);  
   $("#css-box").val(demoCSS);
   $("#js-box").val(demoJS);
+  $("#demo-div").show('slow');
 })    
     
 });
