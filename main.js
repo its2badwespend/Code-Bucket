@@ -1,5 +1,4 @@
 $( document ).ready(() => {
-    console.log( "ready!" );
     
 let iframeUpdate = () => { 
     $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#css-box").val() + "</style></head><body>" + $("#html-box").val() + "</body></html>");
