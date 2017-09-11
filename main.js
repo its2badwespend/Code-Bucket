@@ -18,20 +18,10 @@ $( "#output-button" ).click(function() {
 });    
 
 
-
-let newsrc = `<!DOCTYPE html>\n<html>\n<head>\n<meta charset='utf-8' />\n<style>\n ${$("#css-box").value}\n</style>\n</head>\n<body>\n ${$("#html-box").value}\n<script>\n ${$("#js-box").value}\n<\/script>\n<\/body>\n<\/html>`;
-
-let iframe = $('#output-box');
-
-setInterval(() => {
-     iframe.srcdoc = $('#html-box').value + '<style>' +
-                $('#css-box').value + '</style>' + '<script>' +
-                $('#js-box').value + '<\/script>'}, 1000)
-
-
-//setInterval(() => {
-//        $('#output-box').attr('src', 'https://google.com');
-//        }, 5000);
+$("textarea").on("change keyup paste",() =>{    
+$("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#css-box").val() + "</style></head><body>" + $("#html-box").val() + "</body></html>");
+});
+    
     
 });
 
